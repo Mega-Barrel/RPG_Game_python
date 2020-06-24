@@ -46,7 +46,7 @@ class Person:
         return self.hp
 
     def get_max_hp(self):
-        return self.maxhp
+        return self.maxh 
     
     def get_mp(self):
         return self.mp
