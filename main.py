@@ -1,5 +1,6 @@
 from classes.game import Person, bcolors
 from classes.magic import Spell
+from classes.inventory import Item
 
 # Create Black Magic
 fire = Spell('Fire', 10, 100, 'black')
@@ -12,6 +13,14 @@ quake = Spell('Quake', 14, 140, 'black')
 # Create White Magic
 cure = Spell('cure', 12, 120, 'white')
 cura = Spell('Cura', 18, 200, 'white')
+
+# Create some Item
+potion = Item('Potion', 'potion', 'Heals 50 HP', 50)
+hipotion = Item('Hi-Potion', 'potion', 'Heals 100 HP', 100)
+superpotion = Item('Super Potion', 'potion', 'Heals 500 HP', 500)
+elixer = Item('Elixer', 'elixer', 'Fully restores HP/MP of one party member', 9999)
+hielixer = Item('MegaElixer', 'elixer', "Fully restores party's HP/MP ", 9999)
+
 
 
 # Instantiate People
