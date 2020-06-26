@@ -1,4 +1,3 @@
-from .magic import Spell
 import random
 
 class bcolors:
@@ -15,7 +14,7 @@ class bcolors:
 
 class Person:
 
-    def __init__(self, hp, mp, atk, df, magic):
+    def __init__(self, hp, mp, atk, df, magic, items):
 
         self.maxhp = hp
         self.hp = hp
@@ -25,7 +24,8 @@ class Person:
         self.atkh = atk + 10
         self.df = df
         self.magic = magic
-        self.actions = ['Attack', 'Magic']
+        self.items = items
+        self.actions = ['Attack', 'Magic', 'Items']
 
 
     def generate_damage(self):
@@ -62,19 +62,27 @@ class Person:
     
     def choose_action(self):
         i = 1
-        print(bcolors.OKBULE + bcolors.BOLD + "Actions" + bcolors.ENDC)
+
+        print('\n' + bcolors.OKBULE + bcolors.BOLD + "ACTIONS:" + bcolors.ENDC)
         for item in self.actions:
-            print(str(i) + ":", item)
+            print('    ' + str(i) + ".", item)
             i += 1
 
     def choose_magic(self):
         i = 1
-        print(bcolors.OKBULE + bcolors.BOLD + "Magic" + bcolors.ENDC)
+
+        print('\n' + bcolors.OKBULE + bcolors.BOLD + "MAGIC:" + bcolors.ENDC)
         for spell in self.magic:
-            print(str(i) + ":", spell.name, "(cost:", str(spell.cost) + ")")
+            print('    ' + str(i) + ".", spell.name, "(cost:", str(spell.cost) + ")")
             i += 1
 
+    def choose_items(self):
+        i = 1
 
+        print('\n' + bcolors.OKGREEN + bcolors.BOLD + "ITEMS:" + bcolors.ENDC)
+        for item in self.items:
+            print('    ' + str(i) + '.', item['item'].name + ':', item['item'].description, " (x" +str(item['quantity']) + ")")
+            i += 1
 
 
 
